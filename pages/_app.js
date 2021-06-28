@@ -1,7 +1,15 @@
-import 'tailwindcss/tailwind.css'
+import "tailwindcss/tailwind.css";
+import Nav from "sections/nav";
+import Footer from "sections/footer";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <div>
+      <Nav />
+      <Component {...pageProps} />
+      <Footer />
+    </div>
+  );
 }
 
-export default MyApp
+export default MyApp;

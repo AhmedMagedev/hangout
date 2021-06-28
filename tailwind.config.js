@@ -1,6 +1,10 @@
 module.exports = {
   mode: "jit",
-  purge: ["./pages/**/*.{js,jsx,ts,tsx}", "./sections/**/*.{js,jsx,ts,tsx}"],
+  purge: [
+    "./pages/**/*.{js,jsx,ts,tsx}",
+    "./sections/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -11,6 +15,7 @@ module.exports = {
       },
       spacing: {
         banner: "650px",
+        nanner: "750px",
       },
     },
   },
