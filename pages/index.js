@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import firebase from "firebase/initFirebase";
 import Btn from "components/Btn";
 import { DestinationCard } from "components/DestinationCard";
 import {
@@ -8,6 +9,8 @@ import {
   CalculatorIcon,
   EmojiHappyIcon,
 } from "@heroicons/react/solid";
+
+firebase();
 
 export default function Home() {
   const popularDestinations = [
