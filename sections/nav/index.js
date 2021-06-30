@@ -33,7 +33,7 @@ const Nav = () => {
           </a>
         </li>
         <li>
-          <a href="/signIn" className="hover:text-red-500 ">
+          <a href="/auth" className="hover:text-red-500 ">
             Sign In
           </a>
         </li>
@@ -68,7 +68,7 @@ const Nav = () => {
           </li>
         </ul>
       </div>
-      <div className="bg-red-500 hidden items-center p-10  lg:flex">
+      <div className="bg-red-500 hidden items-center p-12  lg:flex hover:p-24">
         <SearchIcon className=" w-5 text-white " />
       </div>
       <div className=" flex items-center p-10 lg:hidden  ">
