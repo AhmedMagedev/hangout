@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import firebase from "firebase/initFirebase";
+import ReadFromCloudFirestore from "firebaseComponents/cloudFirestore/cloudFirestore/Read";
+import WriteToCloudFirestore from "firebaseComponents/cloudFirestore/cloudFirestore/Write";
 import Btn from "components/Btn";
 import { DestinationCard } from "components/DestinationCard";
 import {
@@ -76,6 +78,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <WriteToCloudFirestore />
+      <br />
+      <ReadFromCloudFirestore />
       <div className="max-w-md sm:max-w-xl lg:max-w-6xl mx-auto px-8 lg:px-12 py-8 mb-36">
         <h2 className="text-2xl text-gray-900 text-center mt-24">
           Popular destinations
