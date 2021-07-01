@@ -59,7 +59,7 @@ const Nav = () => {
           <li>
             <a href="/" className="border-r-2 pr-7">
               <PhoneIcon className=" inline-flex w-4 mx-1  text-red-400" />
-              (+20)106449745
+              +20 1007890751
             </a>
           </li>
           <li>

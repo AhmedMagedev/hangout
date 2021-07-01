@@ -15,10 +15,9 @@ const Footer = () => {
           <div className="m-16">
             <p className="text-4xl mb-5 text-white">Company</p>
             <div className=" text-xl space-y-4">
-              <p>5th flora, 700/D kings road, green</p>
-              <p>lane New York-1782</p>
-              <p>+10 367 826 2567</p>
-              <p>contact@carpenter.com</p>
+              <p>5 Abu Al Feda Administrative Building, Zamalek, Cairo</p>
+              <p>+20 1007890751</p>
+              <p>Business.Inquiries@Khroga.com</p>
             </div>
           </div>
           <div className="m-16">

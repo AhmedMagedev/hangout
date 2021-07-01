@@ -4,12 +4,9 @@ import ReadFromCloudFirestore from "firebaseComponents/cloudFirestore/cloudFires
 import WriteToCloudFirestore from "firebaseComponents/cloudFirestore/cloudFirestore/Write";
 import Btn from "components/Btn";
 import { DestinationCard } from "components/DestinationCard";
-import {
-  SearchIcon,
-  BadgeCheckIcon,
-  CalculatorIcon,
-  EmojiHappyIcon,
-} from "@heroicons/react/solid";
+import Banner from "sections/banner";
+import { SearchIcon } from "@heroicons/react/solid";
+import Badges from "sections/badges";
 
 export default function Home() {
   const popularDestinations = [
@@ -58,12 +55,7 @@ export default function Home() {
   ];
   return (
     <div>
-      <div className="relative w-full shadow-lg h-banner">
-        <p className=" text-6xl text-gray-100 w-full h-full items-center flex justify-center absolute z-10">
-          Enjoy Egypt
-        </p>
-        <img src="/banner.jpg" className="w-full object-cover inline h-full" />
-      </div>
+      <Banner text="Enjoy Egypt" photo="/banner.jpg" />
       <div className="w-full h-32 bg-indigo-light justify-center ">
         <div className="flex justify-center items-center h-full space-x-5">
           <p className="text-xl text-gray-100">What do you need?</p>
@@ -103,27 +95,7 @@ export default function Home() {
           </div>
         </a>
       </div>
-      <div className="h-80 w-full bg-white flex justify-center items-center lg:space-x-40 space-x-20">
-        <div className="text-4xl text-black space-y-3 justify-center text-center">
-          <EmojiHappyIcon className=" inline-flex w-20 mx-1  text-red-400" />
-          <p className="text-3xl text-black ">Happy</p>
-          <p className="text-xl text-gray-600">
-            makes you say sheeshh after every trip
-          </p>
-        </div>
-        <div className="text-4xl text-black space-y-3 content-center justify-start text-center">
-          <CalculatorIcon className=" inline-flex w-20 mx-1  text-red-400" />
-          <p className="text-3xl text-black ">Calculated</p>
-          <p className="text-xl text-gray-600">
-            Will calculate trips for your broke ass
-          </p>
-        </div>
-        <div className="text-4xl text-black space-y-3 justify-center text-center">
-          <BadgeCheckIcon className=" inline-flex w-20 mx-1  text-red-400" />
-          <p className="text-3xl text-black ">Top rated</p>
-          <p className="text-xl text-gray-600">We only suggest dope places</p>
-        </div>
-      </div>
+      <Badges />
       <div className="w-full h-80  bg-gray-100 justify-center flex items-center space-x-20">
         <div className="h-52 lg:w-1/4 w-2/4 bg-white rounded-xl border-2 border-gray-200">
           <div className="flex justify-between">
