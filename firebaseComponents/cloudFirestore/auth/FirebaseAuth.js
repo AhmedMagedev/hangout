@@ -7,7 +7,6 @@ import { setUserCookie } from "firebase/userCookies";
 import { mapUserData } from "firebase/mapUserData";
 
 initFirebase();
-console.log("Hi");
 
 const firebaseAuthConfig = {
   signInFlow: "popup",

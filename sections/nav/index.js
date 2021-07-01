@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Btn from "components/Btn";
 import {
   ChevronDownIcon,
   PhoneIcon,
@@ -9,8 +10,11 @@ import {
   CameraIcon,
   MenuIcon,
 } from "@heroicons/react/solid";
+import { useUser } from "firebase/useUser";
 
 const Nav = () => {
+  const { user, logout } = useUser();
+
   return (
     <nav className="flex shadow-lg space-x-8  justify-between">
       <div className="ml-10">
@@ -32,16 +36,23 @@ const Nav = () => {
             About
           </a>
         </li>
-        <li>
-          <a href="/auth" className="hover:text-red-500 ">
-            Sign In
-          </a>
-        </li>
-        <li>
-          <a href="/signUp" className="hover:text-red-500 ">
-            Sign up
-          </a>
-        </li>
+        {user ? (
+          <div className="flex">
+            <p className="border-l-2 px-10 text-lg">{`Hi ${user.name} !`}</p>
+            <button
+              className="  transition text-red-400 font-bold text-lg"
+              onClick={logout}
+            >
+              logout
+            </button>
+          </div>
+        ) : (
+          <li>
+            <a href="/auth" className="hover:text-red-500 ">
+              Sign In
+            </a>
+          </li>
+        )}
       </ul>
       <div className="justify-items-end items-center flex">
         <ul className="hidden items-center space-x-5 flex-auto mx-5 lg:flex">
@@ -68,7 +79,7 @@ const Nav = () => {
           </li>
         </ul>
       </div>
-      <div className="bg-red-500 hidden items-center p-12  lg:flex hover:p-24">
+      <div className="bg-red-500 hidden items-center p-14  lg:flex hover:px-24 transition-all ">
         <SearchIcon className=" w-5 text-white " />
       </div>
       <div className=" flex items-center p-10 lg:hidden  ">

@@ -1,4 +1,4 @@
-import "tailwindcss/tailwind.css";
+import "global.scss";
 import Nav from "sections/nav";
 import Footer from "sections/footer";
 
