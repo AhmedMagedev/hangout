@@ -18,7 +18,8 @@ export default function Home() {
       .firestore()
       .collection("locations")
       .where("category", ">=", query)
-      .where("category", "<=", query + "~"),
+      .where("category", "<=", query + "~")
+      .limit(9),
     {
       snapshotListenOptions: { includeMetadataChanges: true },
     }
@@ -54,12 +55,12 @@ export default function Home() {
               setQuery("");
             }}
           />
-          <button
+          <a
             href="/search"
             className="px-9 py-3 hover:bg-red-300 hover:border-red-300 hover:-translate-y-0.5 transform transition border-red-400 border-2 text-lg rounded-lg"
           >
             <SearchIcon className="text-gray-50 w-5" />
-          </button>
+          </a>
         </div>
       </div>
       <div className="max-w-md sm:max-w-xl lg:max-w-6xl mx-auto px-8 lg:px-12 py-8 mb-36">
@@ -78,7 +79,8 @@ export default function Home() {
           {listings
             ? listings.docs.map((destination) => (
                 <DestinationCard
-                  destination={destination}
+                  destination={destination.data()}
+                  id={destination.id}
                   key={destination.id}
                 />
               ))

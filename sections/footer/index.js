@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -19,42 +20,55 @@ const Footer = () => {
               <p>+20 1007890751</p>
               <p>Business.Inquiries@Khroga.com</p>
             </div>
+            <div className="flex space-x-4 my-4 ">
+              <a href="/">
+                <FaFacebookF className="text-white- w-auto h-6" />
+              </a>
+
+              <a href="/">
+                <FaTwitter className="  text-white- w-auto h-6" />
+              </a>
+
+              <a href="/">
+                <FaInstagram className=" text-white- w-auto h-6" />
+              </a>
+            </div>
           </div>
           <div className="m-16">
             <p className="text-4xl mb-5 text-white">Instgram</p>
             <div className=" grid gap-6 grid-cols-2 xl:grid-cols-3">
               <Image
-                src="/seattle.jpg"
+                src="/cc.jpg"
                 width="100"
                 height="100"
                 className="rounded-md"
               />
               <Image
-                src="/miami.jpg"
+                src="/donuteria.jpg"
                 width="100"
                 height="100"
                 className="rounded-md"
               />
               <Image
-                src="/toronto.jpg"
+                src="/pottery.jpg"
                 width="100"
                 height="100"
                 className="rounded-md"
               />
               <Image
-                src="/colorado.jpg"
+                src="/refill.jpg"
                 width="100"
                 height="100"
                 className="rounded-md"
               />
               <Image
-                src="/chicago.jpg"
+                src="/beanos.jpg"
                 width="100"
                 height="100"
                 className="rounded-md"
               />
               <Image
-                src="/malibu.jpg"
+                src="/pixels.jpg"
                 width="100"
                 height="100"
                 className="rounded-md"

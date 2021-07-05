@@ -11,6 +11,7 @@ import {
   MenuIcon,
 } from "@heroicons/react/solid";
 import { useUser } from "firebase/useUser";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Nav = () => {
   const { user, logout } = useUser();
@@ -59,17 +60,17 @@ const Nav = () => {
           </li>
           <li>
             <a href="/">
-              <BookmarkIcon className=" inline-flex w-4 mx-1  text-red-400" />
+              <FaFacebookF className="text-red-400" />
             </a>
           </li>
           <li>
             <a href="/">
-              <CalendarIcon className=" inline-flex w-4 mx-1  text-red-400" />
+              <FaTwitter className=" inline-flex w-4 mx-1  text-red-400" />
             </a>
           </li>
           <li>
             <a href="/">
-              <CameraIcon className=" inline-flex w-4 mx-1  text-red-400" />
+              <FaInstagram className=" inline-flex w-4 mx-1  text-red-400" />
             </a>
           </li>
         </ul>
