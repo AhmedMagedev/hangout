@@ -27,11 +27,6 @@ const Nav = () => {
           </a>
         </li>
         <li>
-          <a href="/" className="hover:text-red-500">
-            Contact
-          </a>
-        </li>
-        <li>
           <a href="/about" className="hover:text-red-500 ">
             About
           </a>
@@ -79,9 +74,11 @@ const Nav = () => {
           </li>
         </ul>
       </div>
-      <div className="bg-red-500 hidden items-center p-14  lg:flex hover:px-24 transition-all ">
-        <SearchIcon className=" w-5 text-white " />
-      </div>
+      <a href="/search">
+        <div className="bg-red-500 hidden items-center p-14 w-full h-full lg:flex hover:px-20 transition-all ">
+          <SearchIcon className=" w-5 text-white " />
+        </div>
+      </a>
       <div className=" flex items-center p-10 lg:hidden  ">
         <MenuIcon className=" w-6 text-black  " />
       </div>
