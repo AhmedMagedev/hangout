@@ -44,7 +44,11 @@ export default function Search() {
       <div className="mt-20 grid gap-16 lg:grid-cols-2 xl:grid-cols-3">
         {listings
           ? listings.docs.map((destination) => (
-              <DestinationCard destination={destination} key={destination.id} />
+              <DestinationCard
+                destination={destination.data()}
+                id={destination.id}
+                key={destination.id}
+              />
             ))
           : null}
       </div>
