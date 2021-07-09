@@ -9,6 +9,7 @@ import Badges from "sections/badges";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
+import { FaSpinner } from "react-icons/fa";
 
 export default function Home() {
   const [query, setQuery] = useState("");
@@ -71,9 +72,12 @@ export default function Home() {
           A selection of great experience with lots to see and explore.
         </p>
         {isLoading && (
-          <p className="text-lg text-gray-900 text-center mt-24">
-            Loading places...
-          </p>
+          <div className="mt-24 justify-center flex">
+            <FaSpinner
+              aria-label="loading"
+              className="animate-spin w-24 h-auto"
+            />
+          </div>
         )}
         <div className="mt-20 grid gap-16 lg:grid-cols-2 xl:grid-cols-3">
           {listings

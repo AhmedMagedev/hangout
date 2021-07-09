@@ -1,12 +1,38 @@
 import React from "react";
+import firebase from "firebase/app";
+import "firebase/firestore";
+import { useRouter } from "next/router";
 
 export default function form() {
+  const router = useRouter();
+  const sendData = (e) => {
+    e.preventDefault();
+    firebase
+      .firestore()
+      .collection("reservations")
+      .doc()
+      .set({
+        first_name: e.target.elements.firstName.value,
+        last_name: e.target.elements.lastName.value,
+        phone: e.target.elements.phone.value,
+        email: e.target.elements.email_address.value,
+        date: e.target.elements.date.value,
+      })
+      .then(() => {
+        alert("Reservation in progress");
+        router.push("/");
+      })
+
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className=" max-w-3xl mx-auto my-24">
       <p className=" text-6xl text-red-400 items-center flex justify-center m-24">
         Reserve
       </p>
-      <form action="#" method="POST">
+      <form onSubmit={sendData}>
         <div className="shadow overflow-hidden ">
           <div className="px-16 py-20 bg-white ">
             <div className="grid grid-cols-6 gap-6">
@@ -19,8 +45,8 @@ export default function form() {
                 </label>
                 <input
                   type="text"
-                  name="first-name"
-                  id="first-name"
+                  name="firstName"
+                  id="firstName"
                   autoComplete="given-name"
                   className="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm  border-gray-300 rounded-md"
                 />
@@ -35,8 +61,8 @@ export default function form() {
                 </label>
                 <input
                   type="text"
-                  name="last-name"
-                  id="last-name"
+                  name="lastName"
+                  id="lastName"
                   autoComplete="family-name"
                   className="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm  border-gray-300 rounded-md"
                 />
@@ -66,8 +92,8 @@ export default function form() {
                 </label>
                 <input
                   type="text"
-                  name="email-address"
-                  id="email-address"
+                  name="email_address"
+                  id="email_address"
                   autoComplete="email"
                   className="mt-4 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm  border-gray-300 rounded-md"
                 />
@@ -94,7 +120,7 @@ export default function form() {
               type="submit"
               className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-500 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
             >
-              Save
+              Reserve
             </button>
           </div>
         </div>

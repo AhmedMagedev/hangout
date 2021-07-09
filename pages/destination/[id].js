@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import { DestinationCard } from "components/DestinationCard";
 import Btn from "components/Btn";
+import { FaSpinner } from "react-icons/fa";
 
 const fetcher = async (...args) => {
   const res = await fetch(...args);
@@ -15,7 +16,11 @@ function Destintaion() {
   const { data } = useSWR(`/api/destination/${id}`, fetcher);
 
   if (!data) {
-    return "Loading...";
+    return (
+      <div className=" h-80 my-52 w-full text-center flex justify-center">
+        <FaSpinner aria-label="loading" className="animate-spin w-24 h-auto" />
+      </div>
+    );
   }
 
   return (
