@@ -17,11 +17,13 @@ const Nav = () => {
   const { user, logout } = useUser();
 
   return (
-    <nav className="flex shadow-lg space-x-8 items-center justify-between">
+    <nav className="flex shadow-lg space-x-8 items-center justify-between sm:h-auto h-20">
       <div className="ml-10">
-        <Image src="/logo.png" alt="logo" width="150" height="150" />
+        <a href="/">
+          <Image src="/logo.png" alt="logo" width="75" height="75" />
+        </a>
       </div>
-      <ul className=" items-center  space-x-8 lg:flex-auto lg:flex ">
+      <ul className="items-center lg:-ml-5 space-x-8 lg:flex-auto sm:flex hidden">
         <div className="flex space-x-6 items-center mr-36 lg:mr-0">
           <li>
             <a href="/" className="border-l-2 pl-10 hover:text-red-500">
@@ -78,8 +80,8 @@ const Nav = () => {
         </ul>
       </div>
       <a href="/search">
-        <div className="bg-red-500  items-center p-14 w-full h-40 flex  hover:px-20 transition-all ">
-          <SearchIcon className=" w-5 text-white " />
+        <div className="bg-red-500  items-center sm:p-14 p-10 w-full sm:h-40 flex sm:hover:px-20  hover:px-12 transition-all ">
+          <SearchIcon className="sm:w-5 w-3 text-white " />
         </div>
       </a>
     </nav>
